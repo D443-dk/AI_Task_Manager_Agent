@@ -1,107 +1,124 @@
+# AI-Based Task Manager Agent
 
-# AI Task Manager Agent
+## Project Overview
 
-This is a simple **Agentic AI System** to manage your personal tasks using FastAPI (Python).  
-It works 100% offline — no internet required after setup!
+This project is a lightweight AI-based Task Manager Agent built using **FastAPI**. It allows users to manage tasks through a RESTful API: create, read, update, and delete tasks. Tasks are stored locally in a JSON file, which makes the setup simple without needing any external database.
 
+---
 
-## Folder Structure
+## Problem Statement
+
+Managing personal or team tasks manually can be inefficient. The goal was to automate this through a backend API system that supports:
+
+* Creating tasks
+* Updating tasks
+* Deleting tasks
+* Retrieving all tasks
+
+---
+
+## Solution Architecture
 
 ```
 AI_Task_Manager_Agent/
+│
 ├── src/
-│   ├── main.py
-│   └── tasks.json
-├── packages/
-│   ├── fastapi-*.whl
-│   ├── uvicorn-*.whl
-│   └── starlette-*.whl
-└── venv/
+│   ├── main.py              # Main FastAPI app
+│   ├── data/
+│   │   └── tasks.json       # JSON storage for tasks
+│   └── models/
+│       └── task_model.py    # Pydantic model for task validation
+│
+└── packages/                # Pre-downloaded wheel files (optional)
 ```
 
+* **FastAPI** for API backend
+* **Uvicorn** as ASGI server
+* **Pydantic** for data validation
+* **tasks.json** as lightweight database
 
-##  How to Run the Project
 
-###  1. Create and Activate Environment
+## Setup Instructions
 
-```bash
+### 1. Clone the repository
+
+```
+git clone https://github.com/yourusername/AI_Task_Manager_Agent.git
 cd AI_Task_Manager_Agent
-python -m venv venv
-venv\Scripts\activate
 ```
 
-###  2. Install Packages Offline
+### 2. Create and activate a virtual environment
 
-```bash
+```
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+### 3. Install dependencies (offline)
+
+```
 cd packages
 pip install fastapi-*.whl
-pip install uvicorn-*.whl
 pip install starlette-*.whl
+pip install uvicorn-*.whl
 ```
 
-###  3. Start the API Server
+### 4. Start the FastAPI server
 
-```bash
-cd ..\src
+```
+cd ..
+cd src
 uvicorn main:app --reload
 ```
 
-##  API Documentation
 
-After running the server, open in browser:
+## API Endpoints
 
-```
-http://127.0.0.1:8000/docs
-```
+### `GET /`
 
-This will open Swagger UI — you can **test all API endpoints here**.
+Returns a welcome message.
 
+### `GET /tasks`
 
-##  Available APIs
+Returns the list of all tasks.
 
-| Method | Endpoint         | Description        |
-|--------|------------------|--------------------|
-| GET    | /tasks           | Get all tasks      |
-| POST   | /tasks           | Add a new task     |
-| PUT    | /tasks/{task_id} | Update a task      |
-| DELETE | /tasks/{task_id} | Delete a task      |
+### `POST /tasks`
 
-###  Sample JSON for POST
+Creates a new task. Requires JSON body:
 
 ```json
 {
-  "title": "Finish Project",
-  "description": "Complete the AI Agent Task before deadline",
-  "status": "Pending"
+  "title": "Complete assignment",
+  "description": "Finish the AI Task Manager project"
 }
 ```
 
+### `PUT /tasks/{task_id}`
 
-##  JSON Data File
+Updates a task with the given ID.
 
-All tasks are stored in:
+### `DELETE /tasks/{task_id}`
 
-```
-src/tasks.json
-```
-
-You can also open and edit this manually.
-
-
-## Final Output Sample
-
-When server is running:
-- Visiting `http://127.0.0.1:8000/` shows:
-  ```json
-  {
-    "message": "Welcome to AI Task Manager Agent"
-  }
-  ```
-
-- Full testing can be done via Swagger UI or Postman.
+Deletes a task with the given ID.
 
 
 
-## Author
+## Walkthrough Video
 
-Made by [Dinesh Kumar] for the OneData AI/ML Engineer Assignment 
+Watch this full walkthrough  to understand the project, code, and usage:
+
+🔗 [Watch on Vimeo]([(https://vimeo.com/1083479053?share=copy)]
+
+
+
+## Highlights
+
+* Fully functional CRUD API
+* Local JSON storage (no DB setup required)
+* Clean, modular codebase
+* Offline installation supported
+
+
+## Acknowledgements
+
+Thanks to **OneData Software Solutions** for the opportunity to build this agentic AI system.
