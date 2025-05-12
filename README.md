@@ -1,25 +1,24 @@
-1. Project Title
+
 # Agentic AI System – Automated Email Responder Agent
 
-2. Project Description
+# Description
 An AI-powered agent that reads, understands, and responds to emails automatically based on context, urgency, and predefined logic using LLMs. Built using LangChain and OpenAI API.
 
-3. Features
+# Features
 - Email inbox reading and classification
 - Context-aware automated replies
 - Priority-based handling
 - Memory-enabled conversation continuity
 - API tested with categorization and filtering
 
-4. Tech Stack
+# Tech Stack
 - Python 3.x
 - FastAPI
 - LangChain
 - OpenAI API
-- SQLite / PostgreSQL (optional for memory)
 - Pytest
 
-5. Installation Steps
+# Installation Steps
 1. Clone the repo:
    git clone <your-repo-url>
 
@@ -32,7 +31,7 @@ An AI-powered agent that reads, understands, and responds to emails automaticall
 4. Run the FastAPI app:
    uvicorn main:app --reload
 
-6. Folder Structure
+# Folder Structure
 /project-root
 │
 ├── main.py
