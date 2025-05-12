@@ -1,62 +1,92 @@
+# AI Task Manager Agent 🧐✅
 
-# Agentic AI System – Automated Email Responder Agent
+An **Agentic AI System** that manages and organizes tasks given in natural language. Built using **FastAPI** and designed to simulate a lightweight AI-based task manager.
 
-# Description
-An AI-powered agent that reads, understands, and responds to emails automatically based on context, urgency, and predefined logic using LLMs. Built using LangChain and OpenAI API.
 
-# Features
-- Email inbox reading and classification
-- Context-aware automated replies
-- Priority-based handling
-- Memory-enabled conversation continuity
-- API tested with categorization and filtering
+## 📌 Description
 
-# Tech Stack
-- Python 3.x
-- FastAPI
-- LangChain
-- OpenAI API
-- Pytest
+This AI Agent accepts task inputs in natural language, categorizes them, and stores them efficiently. It supports:
 
-# Installation Steps
-1. Clone the repo:
-   git clone <your-repo-url>
+* 📥 Adding tasks
+* 📒 Organizing tasks by category and status
+* ✏️ Updating task details
+* 🗑️ Deleting tasks
+* 📃 Retrieving all tasks
 
-2. Install dependencies:
+This simulates a foundational AI-based task manager for productivity use cases.
+
+
+## 🚀 Features
+
+* FastAPI-powered RESTful API
+* Task model with `title`, `description`, `status`, and `category`
+* Supports CRUD operations
+* JSON-based storage for simplicity
+* Project structured in a scalable way
+
+
+## 🧱 Tech Stack
+
+* Python 3.11+
+* FastAPI
+* Pydantic
+* Uvicorn
+
+
+## 🐂 Folder Structure
+
+```
+AI_Task_Manager_Agent/
+├── data/
+│   └── tasks.json            # Stores tasks in JSON format
+├── models/
+│   └── .gitkeep              # Placeholder (optional model extensions)
+├── utils/
+│   └── .gitkeep              # Placeholder (helper functions in future)
+├── src/
+│   └── main.py               # Main FastAPI app
+├── README.md
+├── requirements.txt
+```
+
+
+## ⚙️ Installation & Run
+
+1. **Clone the repo:**
+
+   ```bash
+   git clone https://github.com/D443-dk/AI_Task_Manager_Agent.git
+   cd AI_Task_Manager_Agent
+   
+2. **Install dependencies:**
+
+   ```bash
    pip install -r requirements.txt
 
-3. Set your environment variables:
-   - OPENAI_API_KEY=your_key_here
+3. **Run the app:**
 
-4. Run the FastAPI app:
+   ```bash
+   cd src
    uvicorn main:app --reload
+   
 
-# Folder Structure
-/project-root
-│
-├── main.py
-├── agents/
-│   └── email_responder.py
-├── tests/
-│   └── test_email.py
-├── .env
-├── requirements.txt
-└── README.md
+## 📬 API Endpoints
 
-7. How to Run Tests
-# Run all tests
-pytest
-
-# Run only a specific category (e.g., auth)
-pytest -m auth
-
-8. Future Improvements
-- Gmail integration
-- Priority inbox logic tuning
-- UI for email monitoring
-- Add RAG support (Retrieval-Augmented Generation)
-
-9. License
-MIT License
+| Method | Endpoint      | Description    |
+| ------ | ------------- | -------------- |
+| GET    | `/tasks`      | Get all tasks  |
+| POST   | `/tasks`      | Add a new task |
+| PUT    | `/tasks/{id}` | Update a task  |
+| DELETE | `/tasks/{id}` | Delete a task  |
 
 
+## ✅ Final Notes
+
+* Project tested via Postman for all CRUD operations.
+* `models/`, `data/`, and `utils/` included for extensibility.
+* Designed with clean code principles and API best practices.
+
+
+## 📄 License
+
+MIT License © 2025 Dinesh Kumar
