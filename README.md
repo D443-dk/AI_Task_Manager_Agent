@@ -1,92 +1,107 @@
-# AI Task Manager Agent 🧐✅
 
-An **Agentic AI System** that manages and organizes tasks given in natural language. Built using **FastAPI** and designed to simulate a lightweight AI-based task manager.
+# AI Task Manager Agent
 
-
-## 📌 Description
-
-This AI Agent accepts task inputs in natural language, categorizes them, and stores them efficiently. It supports:
-
-* 📥 Adding tasks
-* 📒 Organizing tasks by category and status
-* ✏️ Updating task details
-* 🗑️ Deleting tasks
-* 📃 Retrieving all tasks
-
-This simulates a foundational AI-based task manager for productivity use cases.
+This is a simple **Agentic AI System** to manage your personal tasks using FastAPI (Python).  
+It works 100% offline — no internet required after setup!
 
 
-## 🚀 Features
-
-* FastAPI-powered RESTful API
-* Task model with `title`, `description`, `status`, and `category`
-* Supports CRUD operations
-* JSON-based storage for simplicity
-* Project structured in a scalable way
-
-
-## 🧱 Tech Stack
-
-* Python 3.11+
-* FastAPI
-* Pydantic
-* Uvicorn
-
-
-## 🐂 Folder Structure
+## Folder Structure
 
 ```
 AI_Task_Manager_Agent/
-├── data/
-│   └── tasks.json            # Stores tasks in JSON format
-├── models/
-│   └── .gitkeep              # Placeholder (optional model extensions)
-├── utils/
-│   └── .gitkeep              # Placeholder (helper functions in future)
 ├── src/
-│   └── main.py               # Main FastAPI app
-├── README.md
-├── requirements.txt
+│   ├── main.py
+│   └── tasks.json
+├── packages/
+│   ├── fastapi-*.whl
+│   ├── uvicorn-*.whl
+│   └── starlette-*.whl
+└── venv/
 ```
 
 
-## ⚙️ Installation & Run
+##  How to Run the Project
 
-1. **Clone the repo:**
+###  1. Create and Activate Environment
 
-   ```bash
-   git clone https://github.com/D443-dk/AI_Task_Manager_Agent.git
-   cd AI_Task_Manager_Agent
-   
-2. **Install dependencies:**
+```bash
+cd AI_Task_Manager_Agent
+python -m venv venv
+venv\Scripts\activate
+```
 
-   ```bash
-   pip install -r requirements.txt
+###  2. Install Packages Offline
 
-3. **Run the app:**
+```bash
+cd packages
+pip install fastapi-*.whl
+pip install uvicorn-*.whl
+pip install starlette-*.whl
+```
 
-   ```bash
-   cd src
-   uvicorn main:app --reload
-   
+###  3. Start the API Server
 
-## 📬 API Endpoints
+```bash
+cd ..\src
+uvicorn main:app --reload
+```
 
-| Method | Endpoint      | Description    |
-| ------ | ------------- | -------------- |
-| GET    | `/tasks`      | Get all tasks  |
-| POST   | `/tasks`      | Add a new task |
-| PUT    | `/tasks/{id}` | Update a task  |
-| DELETE | `/tasks/{id}` | Delete a task  |
+##  API Documentation
 
+After running the server, open in browser:
 
-## ✅ Final Notes
+```
+http://127.0.0.1:8000/docs
+```
 
-* Project tested via Postman for all CRUD operations.
-* `models/`, `data/`, and `utils/` included for extensibility.
-* Designed with clean code principles and API best practices.
+This will open Swagger UI — you can **test all API endpoints here**.
 
 
-## 📄 License
+##  Available APIs
 
-MIT License © 2025 Dinesh Kumar
+| Method | Endpoint         | Description        |
+|--------|------------------|--------------------|
+| GET    | /tasks           | Get all tasks      |
+| POST   | /tasks           | Add a new task     |
+| PUT    | /tasks/{task_id} | Update a task      |
+| DELETE | /tasks/{task_id} | Delete a task      |
+
+###  Sample JSON for POST
+
+```json
+{
+  "title": "Finish Project",
+  "description": "Complete the AI Agent Task before deadline",
+  "status": "Pending"
+}
+```
+
+
+##  JSON Data File
+
+All tasks are stored in:
+
+```
+src/tasks.json
+```
+
+You can also open and edit this manually.
+
+
+## Final Output Sample
+
+When server is running:
+- Visiting `http://127.0.0.1:8000/` shows:
+  ```json
+  {
+    "message": "Welcome to AI Task Manager Agent"
+  }
+  ```
+
+- Full testing can be done via Swagger UI or Postman.
+
+
+
+## Author
+
+Made by [Dinesh Kumar] for the OneData AI/ML Engineer Assignment 
