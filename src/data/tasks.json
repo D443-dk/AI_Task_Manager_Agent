@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Learn AI",
+    "description": "Study AI basics and practice",
+    "status": "pending",
+    "category": "Learning"
+  },
+  {
+    "title": "Complete project report",
+    "description": "Prepare the final report for the project",
+    "status": "pending",
+    "category": "Work"
+  },
+  {
+    "title": "Buy groceries",
+    "description": "Milk, eggs, and bread",
+    "status": "in_progress",
+    "category": "Shopping"
+  },
+  {
+    "title": "Read AI research papers",
+    "description": "Study the latest research papers on AI",
+    "status": "pending",
+    "category": "Learning"
+  },
+  {
+    "title": "Exercise",
+    "description": "Morning workout",
+    "status": "completed",
+    "category": "Fitness"
+  },
+  {
+    "title": "Call customer support",
+    "description": "Call the customer support to resolve the issue",
+    "status": "pending",
+    "category": "Work"
+  }
+]
